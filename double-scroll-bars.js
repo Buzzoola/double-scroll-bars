@@ -55,6 +55,10 @@
 					// angular.element representation od the root <div> of this directive
 					var rootDiv = iElm.children().eq(0);
 
+					if ($dsb.getSize()) {
+						iElm[0].style.top = '-' + parseInt($dsb.getSize()) + 'px';
+					}
+
 					// angular.element object for the first div in the root // <div style="overflow-y: hidden;" data-ng-style="{\'overflow-x\': doubleScrollBarHorizontal == \'always\' ? \'scroll\' : \'auto\', height: nativeScrollBarHeight}">
 					// the 'virtual' top scroll bar will be here
 					var wrapper1 = rootDiv.children().eq(0).children().eq(0);
