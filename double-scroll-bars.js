@@ -27,7 +27,8 @@
 				// isolate scope
 				scope: {
 					doubleScrollBarHorizontal: '@', // if equals 'always' will display inactive scroll bars even if there is nothing to scroll; otherwise show them only when content overflows display area
-					id: '@' // optional id
+					id: '@', // optional id
+					scrollDisabled: '='
 				},
 
 				// HTML template
@@ -81,6 +82,19 @@
 					});
 
 					var firstTime = true;
+
+					$scope.$watch('scrollDisabled', function(disabled) {
+						if (disabled) {
+							// wrapper1dom.scrollLeft = 0
+							// wrapper2dom.scrollLeft = 0
+							wrapper1dom.style.overflowX = 'hidden'
+							wrapper2dom.style.overflowX = 'hidden'
+							console.log(wrapper2dom, wrapper1dom.style.overflowX);
+						} else {
+							wrapper1dom.style.overflowX = 'auto'
+							wrapper2dom.style.overflowX = 'auto'
+						}
+					});
 
 					// watch for a change of the width (e.g. transcluded content changed and so changed its width)
 					$scope.$watch(function() {
