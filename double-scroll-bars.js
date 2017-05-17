@@ -89,7 +89,6 @@
 							// wrapper2dom.scrollLeft = 0
 							wrapper1dom.style.overflowX = 'hidden'
 							wrapper2dom.style.overflowX = 'hidden'
-							console.log(wrapper2dom, wrapper1dom.style.overflowX);
 						} else {
 							wrapper1dom.style.overflowX = 'auto'
 							wrapper2dom.style.overflowX = 'auto'
